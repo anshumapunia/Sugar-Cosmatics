@@ -1,11 +1,22 @@
+.navbar
+{
+  position:sticky;
+  top: 0;
+  /* overflow: hidden; */
+  /* border: solid 1px; */
+  height: max-content;
+  /* width:993px; */
 
+}
 .main
 {
-    display: flex;
+    display:flex;
     background-color: black;
     height: 80px;
+    align-items: center;
+    width:auto;
   
-    /* justify-content: space-between; */
+    justify-content: space-evenly;
     /* position: sticky; */
 
 }
@@ -39,6 +50,12 @@
 .logo
 {
     display: flex;
+    /* text-decoration-line: none; */
+
+}
+.logo a
+{
+  text-decoration: none;
 }
 .logo img
 {
@@ -186,15 +203,17 @@ header{
 
   #main1
        {
-        position: relative;
-        height: auto;
+        /* position: relative; */
+        /* height: auto; */
         width: 100%;
+        /* margin-top: 99px; */
        }
        img
        {
         height: auto;
         width: 100%;
-       }.slider{
+       }
+       .slider{
        
         height: 250px;
         margin: auto;
@@ -202,6 +221,7 @@ header{
         width: 1000px;
         display: grid;
         overflow: hidden;
+        z-index: -1;
         place-items: center;
 }
  .slide-track
@@ -268,7 +288,7 @@ img:hover
     text-transform: uppercase;
 }
 .one{
-  border: 1px solid red;
+  /* border: 1px solid red; */
   height: 400px;
 }
 .one h3
@@ -382,12 +402,13 @@ img:hover
   background-color: black;
   margin: auto;
   justify-items: center;
-  /* height: 100px; */
+  /* height: 132px; */
 }
 .infoot
 {
   justify-content:center;
   /* margin: auto; */
+  margin-top: 20px;
 
 }
 .infoot img
@@ -396,6 +417,73 @@ img:hover
   margin-left: auto;
   margin-right: auto;
   width: 40%;
-  height: 10px
+  height: 130px
 
+}
+.secfoot
+{
+  display: flex;
+  justify-content: center;
+  /* justify-content:  space-around ; */
+  /* margin: auto; */
+  gap: 50px;
+  margin-top: 30px;
+}
+.secfoot div img
+{
+  height: 30px;
+  /* justify-content:; */
+  /* width: 30px; */
+}
+.store
+{
+  /* display: flex; */
+  text-align: center;
+  align-items: center;
+
+  color: white;
+  /* width: 100px; */
+}
+.store div
+{
+  display:inline-flex;
+  /* grid-template-rows: 100px 300px; */
+  text-align: center;
+  gap: 50px;
+  /* margin-left: 230px; */
+}
+.last
+{
+  display: flex;
+  color: white;
+  margin-left: 65px;
+  font-size: small;
+  /* margin: auto; */
+}
+.supp
+{
+  /* margin-right: 40px; */
+  /* padding-right: 40px; */
+  margin-left: 60px;
+}
+.sugg
+{
+  display: flex;
+  color: white;
+  margin-left: 100px;
+}
+.app
+{
+  display: flex;
+  height: 50px;
+  width: 150px;
+  margin-left: 50px;
+  gap: 30px;
+  margin-top: 20px;
+
+}
+.footer
+{
+  color: white;
+  text-align: center;
 }
