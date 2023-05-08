@@ -13,7 +13,6 @@ app.use(cors());
 
 app.use("/users", userRouter);
 app.use(authenticate);
-
 app.use("/product", productRouter);
 
 app.listen(process.env.PORT, async () => {
