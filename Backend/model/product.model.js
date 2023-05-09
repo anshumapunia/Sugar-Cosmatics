@@ -3,7 +3,7 @@ const mongoose= require("mongoose")
 const userSchema= mongoose.Schema({
     image:String,
     additional:String,
-    price:Number,
+    price:String,
     brand:String
 },
 {

@@ -1,14 +1,15 @@
 const cartItemsContainer = document.querySelector(".cart-items");
 const totalPriceElement = document.querySelector("#grandTotal");
 
-displayCartItems(cartItems);
+displayCartItems();
 
-function displayCartItems(cartItems) {
+function displayCartItems() {
   cartItemsContainer.innerHTML = "";
-  let totalPrice=0;
+  let totalPrice = 0;
+  const cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
   cartItems.forEach((item) => {
     const itemElement = document.createElement("div");
-    itemElement.classList.add("cart-items");
+    itemElement.classList.add("cart-item");
 
     const imageElement = document.createElement("img");
     imageElement.classList.add("item-image");
@@ -30,8 +31,7 @@ function displayCartItems(cartItems) {
     priceElement.classList.add("item-price");
     priceElement.textContent = `₹${item.price}`;
     itemElement.appendChild(priceElement);
-    totalPrices(item)
-  
+    totalPrice += item.price * item.quantity;
 
     const quantityContainer = document.createElement("div");
     quantityContainer.classList.add("quantity-container");
@@ -43,10 +43,8 @@ function displayCartItems(cartItems) {
       if (item.quantity > 1) {
         item.quantity--;
         localStorage.setItem("cartItems", JSON.stringify(cartItems));
-        displayCartItems(cartItems);
-        totalPrices(item)
+        displayCartItems();
       }
-      
     });
 
     quantityContainer.appendChild(decreaseQuantityButton);
@@ -62,8 +60,7 @@ function displayCartItems(cartItems) {
     increaseQuantityButton.addEventListener("click", () => {
       item.quantity++;
       localStorage.setItem("cartItems", JSON.stringify(cartItems));
-      displayCartItems(cartItems);
-      totalPrices(item)
+      displayCartItems();
     });
     quantityContainer.appendChild(increaseQuantityButton);
 
@@ -73,12 +70,15 @@ function displayCartItems(cartItems) {
     removeButton.classList.add("remove-button");
     removeButton.textContent = "Remove";
     removeButton.addEventListener("click", () => {
-      const itemIndex = cartItems.indexOf(item);
-      cartItems.splice(itemIndex, 1);
-      localStorage.setItem("cartItems", JSON.stringify(cartItems));
-      displayCartItems(cartItems);
+      const itemIndex = cartItems.findIndex((cartItem) => cartItem.id === item.id);
+      if (itemIndex > -1) {
+        cartItems.splice(itemIndex, 1);
+        localStorage.setItem("cartItems", JSON.stringify(cartItems));
+        displayCartItems();
+      }
     });
-    itemElement.appendChild(removeButton);
+    itemElement.appendChild(removeButton)
+
 
 
 
