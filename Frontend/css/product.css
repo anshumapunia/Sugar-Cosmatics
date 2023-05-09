@@ -218,8 +218,85 @@ header{
     background-color: black;
     color: white;
   }
+  /* .productdata div
+  {
+    display: grid;
+    grid-template-rows: repeat(4, 4fr);
+    border: 1px solid red;
+  } */
+
+/* Style for product container */
+.productdata {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+/* Style for product element */
+.product {
+  width: 300px;
+  margin-bottom: 20px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  box-shadow: 0 0 5px #ddd;
+}
+
+/* Style for product image */
+.product-image {
+  width: 100%;
+  height: auto;
+}
+
+/* Style for product additional information */
+.product-additional {
+  margin-top: 10px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* Style for product brand */
+.product-brand {
+  margin-top: 10px;
+  font-size: 16px;
+  font-weight: normal;
+}
+
+/* Style for product price */
+.product-price {
+  margin-top: 10px;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* Style for add to cart button */
+button {
+  margin-top: 10px;
+  padding: 10px;
+  border: none;
+  background-color: #007bff;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+  border-radius: 8px;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Style for active link in navigation */
+nav ul li a.active {
+  color: #007bff;
+}
+
+
+
+
   #beauty-offers {
     margin-top: 200px;
+    /* display: flex; */
   }
 
   #beauty-offers h1 {

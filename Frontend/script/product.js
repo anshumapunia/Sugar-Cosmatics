@@ -3,7 +3,7 @@ const sortElement = document.querySelector('#sort');
 const filterElement = document.querySelector('#filter');
 
  async function displayProducts() {
-  fetch("https://distinct-cap-bat.cyclic.app/product/")
+  fetch("https://byzantium-bison-suit.cyclic.app/product/")
     .then(response => response.json())
     .then(data => {
         console.log(data)
@@ -42,7 +42,7 @@ function display(data) {
    
       const priceElement = document.createElement("h2");
       priceElement.classList.add("product-price");
-      priceElement.textContent = `₹${product.price}`;
+      priceElement.textContent = `${product.price}`;
       productElement.appendChild(priceElement);
 
 
@@ -52,7 +52,7 @@ function display(data) {
       buttonElement.textContent = "Add to Cart";
       buttonElement.addEventListener("click", () => {
         addToCart(product);
-      });
+      });  
       productElement.appendChild(buttonElement);
 
       containerElement.append(productElement);
@@ -69,7 +69,7 @@ sortSelect.addEventListener('change', async () => {
 
  
   try {
-    let res = await fetch("https://distinct-cap-bat.cyclic.app/product/");
+    let res = await fetch("https://byzantium-bison-suit.cyclic.app/product/");
     let result = await res.json();
     if (selectedSort === 'asc') {
       let arr = result.sort((a, b) => {

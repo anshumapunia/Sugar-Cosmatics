@@ -11,7 +11,7 @@ if(email.value=="" || password.value==""){
     alert("Please Full all details")
 }
   else if(check(login)){
-        window.location.href="./index1.html"
+        window.location.href="./index.html"
    }else{
     alert("Wrong Password Or Wrong Email")
    }
@@ -39,9 +39,9 @@ function signib(){
   open("signin.html");
 }
 
-// function forgot(){
-//     window.location.href = "./forgot.html"
-// }
+function forgot(){
+    window.location.href = "./forgot.html"
+}
 function signup(){
   window.location.href = "./signup.html"
 }
